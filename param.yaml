@@ -1,0 +1,8 @@
+train:
+  units_1: 64
+  units_2: 32
+  units_3: 16
+  dropout: 0.5
+  learning_rate: 0.01
+  batch_size: 32
+  epochs: 50
