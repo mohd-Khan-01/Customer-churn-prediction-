@@ -5,4 +5,4 @@ train:
   dropout: 0.5
   learning_rate: 0.01
   batch_size: 32
-  epochs: 50
+  epochs: 2

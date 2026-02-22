@@ -1,0 +1,10 @@
+
+# Data
+data/raw/
+data/processed/
+
+# Models
+models/
+
+# DVC cache
+.dvc/cache/

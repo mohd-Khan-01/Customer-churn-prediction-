@@ -1,0 +1,27 @@
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+    - data/processed
+    - param.yaml
+    - src/train.py
+    params:
+    - train
+    outs:
+    - models/model.keras
+  preprocess:
+    cmd: python src/preprocessor.py
+    deps:
+    - data/raw/telecom_customer_churn.csv
+    - src/preprocess.py
+    outs:
+    - data/preprocessed
+    - models/preprocessor.pkl
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - data/processed
+    - models/model.keras
+    - src/evaluate.py
+    metrics:
+    - metrics.json
