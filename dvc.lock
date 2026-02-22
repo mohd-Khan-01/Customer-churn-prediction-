@@ -31,3 +31,45 @@ stages:
       hash: md5
       md5: 47ade8c020429e7c0c77ee73ac29ec58
       size: 955393
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+    - path: data/raw/telecom_customer_churn.csv
+      hash: md5
+      md5: f68d49b85ba8d37b09ff0f33282def36
+      size: 1435200
+    - path: src/preprocess.py
+      hash: md5
+      md5: 748136aba30af5e27901899f7df27418
+      size: 3846
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: 25c4ca6cdd4a7215cd6203aefe5415e3.dir
+      size: 32179378
+      nfiles: 4
+    - path: models/preprocessor.pkl
+      hash: md5
+      md5: 8ce2c8012dcab3a9ed3ed0db0db6bc4a
+      size: 23694
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: 25c4ca6cdd4a7215cd6203aefe5415e3.dir
+      size: 32179378
+      nfiles: 4
+    - path: models/model.keras
+      hash: md5
+      md5: 47ade8c020429e7c0c77ee73ac29ec58
+      size: 955393
+    - path: src/evaluate.py
+      hash: md5
+      md5: 90311603126050db11083d4bfc2685d6
+      size: 1807
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: 7e7e517d0a704e25387a38f33d0c4045
+      size: 264
