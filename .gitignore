@@ -8,3 +8,5 @@ models/
 
 # DVC cache
 .dvc/cache/
+
+notebook

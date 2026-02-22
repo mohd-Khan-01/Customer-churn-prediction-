@@ -1,0 +1,33 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: 25c4ca6cdd4a7215cd6203aefe5415e3.dir
+      size: 32179378
+      nfiles: 4
+    - path: params.yaml
+      hash: md5
+      md5: ec5b4f345d2a4f0f97e2778c5c4d541a
+      size: 121
+    - path: src/train.py
+      hash: md5
+      md5: 07a32139da2c2ef737e3889b6e201084
+      size: 1762
+    params:
+      params.yaml:
+        train:
+          units_1: 64
+          units_2: 32
+          units_3: 16
+          dropout: 0.5
+          learning_rate: 0.01
+          batch_size: 32
+          epochs: 2
+    outs:
+    - path: models/model.keras
+      hash: md5
+      md5: 47ade8c020429e7c0c77ee73ac29ec58
+      size: 955393

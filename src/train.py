@@ -43,4 +43,4 @@ def train(data_dir,model_paths,param_paths):
 if __name__=="__main__":
         train(data_dir="data/processed",
             model_paths="models/model.keras",
-            param_paths="param.yaml")
+            param_paths="params.yaml")
